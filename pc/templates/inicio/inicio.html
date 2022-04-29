@@ -1,0 +1,143 @@
+{% load static%}
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/estilos.css" %}">
+    <link href={% static "icons/css/all.css" %} rel="stylesheet">
+
+</head>
+<body>
+
+<nav>
+    <ul>
+         <li> <a href="#"> <i class="fas fa-gamepad"></i>  </a></li>
+         <li> <a href="#"> Inicio </a></li>
+         <li> <a href="#"> Historia del PC </a></li>
+         <li> <a href="#"> Productos </a></li>
+         <li> <a href="#"> Contactos </a></li>
+         <li> <a href="#"> <i class="fas fa-shopping-cart"></i> </a></li>
+    </ul>
+</nav>
+
+<div class="imagenPrincipal">
+    <div class="con1">
+    <h1  style="color: white" class="it1"> Pide todo lo que necesites </h1>
+    <p style="color: white" class="it1"> Todos los elementos de computacion </p>
+    </div>
+</div>
+
+<div class="espacios">
+    <h1 style="color: white"> <i class="fab fa-playstation"></i> --- 200 Marcas de productos Explora los lideres en tecnologia --- <i class="fab fa-xbox"></i></h1>
+</div>
+
+
+<div class="texto">
+    <center>
+        <h1 > Historia del PC </h1>
+    </center>
+    <p> El primer PC de la historia llegó a las tiendas el 12 de agosto de 1981. Apple, Commodore, y en menor medida Tandy
+        y Atari, estaban cosechando un éxito enorme con sus ordenadores personales. A principios de los 80 IBM era la corporación
+        de informática más grande del planeta, pero todos sus equipos estaban diseñados para las empresas. Su precio los colocaba
+        absolutamente fuera del alcance de los aficionados a la informática.
+        <br>
+        <br>
+        Durante la recta final de los 70 sus ejecutivos menospreciaron el potencial de crecimiento de un mercado, el de los
+        ordenadores personales, que en 1979 facturó nada menos que 15 000 millones de dólares. En aquella época las decisiones
+        en IBM las tomaba John Opel, y cuando descubrió que los analistas habían proyectado que el mercado de las máquinas
+        personales crecería un 40% al año se dio cuenta de que estaban dejando escapar un tren que no podían permitirse perder.
+        <br>
+        <br>
+
+
+        El microprocesador que más gustaba a Lowe y su equipo era el Motorola 68000, el mismo que unos años más tarde
+        utilizarían los aún muy apreciados Amiga 500 de Commodore y Atari ST, entre otras máquinas personales. Sin embargo,
+        a principios de los 80 Motorola no podía garantizar a IBM el suministro de su chip en las cantidades que esta última
+        compañía barajaba. Después de sopesar varias alternativas, Lowe y sus acólitos se decantaron por el procesador 8088
+        de Intel, que trabajaba a 4,77 MHz.
+        <br>
+        <br>
+        Había opciones más potentes, como el 8086 de la propia Intel, pero aquella CPU era más económica, y, además,
+        estaba disponible en las grandes cantidades que Lowe y los suyos tenían en mente. Otra baza del 8088 consistía
+        en que su bus de datos de 8 bits permitía abaratar otros subsistemas del PC, lo que sin duda tendría un impacto
+        beneficioso en el precio final de su ordenador personal.
+        <br>
+        <br>
+         <center>
+        <img height="400" width="600" src={% static "img/pcc.jpeg" %}>
+        </center>
+
+    </p>
+</div>
+
+<div class="espacios">
+    <h1 style="color: white"> <i class="fab fa-angellist"></i> --- Expertos en Tecnologia Explora los distintos Productos --- <i class="fas fa-ghost"></i></h1>
+</div>
+
+<div class="productos">
+    <center>
+        <h1 style="color: white"> Pedidos en linea</h1>
+    </center>
+
+</div>
+
+<div class="container" >
+{% for item in productos %}
+    <div class="card" >
+
+         <figure>
+            <img src={{ item.imagen }}>
+        </figure>
+        <div class="contenido" >
+            <h2 > {{ item.nombre }} </h2>
+            <h3 style="color: white"> {{ item.marca }} </h3>
+            <h3 style="color: white"> {{ item.precio }} </h3>
+            <a href="#"> Añadir al carrito</a>
+        </div>
+    </div>
+        {% endfor %}
+</div>
+
+
+<div class="espacios">
+    <h1 style="color: white"><i class="fas fa-laptop"></i> --- Productos de calidad 100% Original --- <i class="fas fa-keyboard"></i></h1>
+</div>
+
+<div class="contactos">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1> COMUNÍCATE CON NOSOTROS </h1>
+      <br>
+      <br>
+      <h2> BOGOTÁ</h2>
+      <br>
+      <br>
+      <h3> <i class="fas fa-mobile"></i> (1)4740303 </h3>
+      <h3> <i class="fab fa-whatsapp"></i> 3104503280</h3>
+      <h3> <i class="fab fa-whatsapp"></i> 3145854545</h3>
+      <h3> <i class="fas fa-map-marker-alt"></i>  Cra. 15 #78-33 C.C. Unilago Local 2-201 y 2-202</h3>
+      <h3> <i class="fas fa-map-marker-alt"></i>  Cra. 15#77-05 C.C. Alta Tecnología Local 1-672</h3>
+      <h3><i class="far fa-envelope"></i>  contacto@clonesyperifericos.com</h3>
+      <br>
+      <br>
+      <h2> MEDELLÍN</h2>
+    <br>
+      <br>
+      <h3> <i class="fab fa-whatsapp"></i> 3216547896</h3>
+      <h3> <i class="fas fa-map-marker-alt"></i>  Cra 48 # 10 45 C.C. Monterrey Local 257 y 258</h3>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+</div>
+
+</body>
+</html>

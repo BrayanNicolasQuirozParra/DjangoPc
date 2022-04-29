@@ -1,0 +1,69 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/estilos.css" %}">
+    <link href={% static "icons/css/all.css" %} rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <ul>
+         <li> <a href="#"> <i class="fas fa-gamepad"></i>  </a></li>
+         <li> <a href="#"> Inicio </a></li>
+         <li> <a href="#"> Historia del PC </a></li>
+         <li> <a href="#"> Productos </a></li>
+         <li> <a href="#"> Contactos </a></li>
+         <li> <a href="#"> <i class="fas fa-shopping-cart"></i> </a></li>
+    </ul>
+</nav>
+<center>
+<div class="container">
+    <div class="card">
+
+        <form action="{% url 'inicio:crear_pc' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+                <br>
+                <br>
+                <label style="color: black"> Imagen Producto </label>
+                <br>
+                <input name="imagen_producto" type="file">
+                <br>
+                <br>
+                <label style="color: black"> Nombre Producto</label>
+                <br>
+                <br>
+                <input name="nombre_producto" type="text">
+                <br>
+                <br>
+                <label style="color: black"> Marca del Producto</label>
+                <br>
+                <br>
+                <input name="marca_producto" type="text">
+                 <br>
+                 <br>
+                <label style="color: black"> Precio del Producto</label>
+                <br>
+                <br>
+                <input name="precio_producto" type="number">
+                <br>
+                <br>
+                <button type="submit"> Agregar Producto </button>
+                <br>
+                <br>
+                <br>
+                <br>
+
+        </form>
+
+    </div>
+</div>
+
+    </center>
+
+
+</body>
+</html>
